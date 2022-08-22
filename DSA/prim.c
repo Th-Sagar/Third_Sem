@@ -1,64 +1,60 @@
-#include<stdio.h>
-#include<stdlib.h>
-int prims(int n, int cost[100][100])
-{
-    int i,j,v,u,mincost=0,visited[10],ne=1;
-    for(i=0;i<=n;i++)
-    {
-        visited[i]=0;
+// Prim's Algorithm in C
 
-    }
-    printf("\n The edges cosidered for MST are \n ");
-    visited[1]=1;
-    while(ne<n)
-    {
-        for(i=1;min=9909;i<=n;i++)
-        {
-            for(j=1;j<=n;j++)
-            {
-                if(cost[i][j]<min)
-                {
-                    if(visited[i]==0)
-                    continue;
-                }
-                else
-                {
-                    min=cost[i][j];
-                    u=i;
-                    v=j;
-                }
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h> 
+
+#define INF 9999999
+
+#define V 5
+
+int G[V][V] = {
+  {0, 9, 75, 0, 0},
+  {9, 0, 95, 19, 42},
+  {75, 95, 0, 51, 66},
+  {0, 19, 51, 0, 31},
+  {0, 42, 66, 31, 0}};
+
+int main() {
+  int no_edge;  
+  int selected[V];
+
+  memset(selected, false, sizeof(selected));
+  
+  
+  no_edge = 0;
+
+ 
+  selected[0] = true;
+
+  int x;  
+  int y;  
+
+  printf("Edge : Weight\n");
+
+  while (no_edge < V - 1) {
+  
+    int min = INF;
+    x = 0;
+    y = 0;
+
+    for (int i = 0; i < V; i++) {
+      if (selected[i]) {
+        for (int j = 0; j < V; j++) {
+          if (!selected[j] && G[i][j]) { 
+            if (min > G[i][j]) {
+              min = G[i][j];
+              x = i;
+              y = j;
             }
+          }
         }
-        if(visited[u]==0 || visited[v]==0)
-        {
-            printf("%d Edges(%d,%d) = %d", ne++,u,v,min);
-            mincost=mincost+min;
-            visited[v]=1;
-        }
-        cost[u][v]=cost[v][u]=999;
-        printf("\n Cost of Mst is %d ",mincost);
-        
+      }
     }
-}
-int main()
-{
-    int i,j,n,cost[10][10];
-    printf("Read the no. of nodes:");
-    scanf("%d",&n);
-    printf("\n Read cost matrix \n :");
-    for (i=1;i<n;i++)
-    {
-        for (j=1;j<n;j++)
-        {
-            scanf("%d",&cost[i][j]);
-            if(cost[i][j]==0)
-            {
-                cost[i][j]=9999;
-            }
-            prims(n,cost[i][j]);
-            
-        }
-        
-    }
-    
+    printf("%d - %d : %d\n", x, y, G[x][y]);
+    selected[y] = true;
+    no_edge++;
+  }
+
+  return 0;
 }

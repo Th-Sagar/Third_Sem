@@ -59,17 +59,8 @@ int main()
     printf("Enter number C :");
     fflush(stdin);
     scanf("%c",&c);
-    if(a=='0' || a=='1' && b=='1'||b=='0'&& c =='1'|| c=='0')
-    {
-
-        printf("\nThe full adder sum of %c,  %c and %c = %c ",a,b,c,sum(a,b,c));
-        printf("\nThe full adder carry of %c,  %c and %c = %c ",a,b,c,carry(a,b,c));
-    }
-    else{
-        printf("\nInvalid input");
-    }
-
-
+    printf("\nThe full adder sum of %c,  %c and %c = %c ",a,b,c,sum(a,b,c));
+    printf("\nThe full adder carry of %c,  %c and %c = %c ",a,b,c,carry(a,b,c));
 
 
 }
