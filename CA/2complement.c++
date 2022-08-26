@@ -50,33 +50,9 @@ int carry( int x, int y, int z)
 {
     return (OR(OR(AND(x,y),AND(x,z)),AND(y,z)));
 }
-int ADD_SUM(int x,int y)
-{
-   int sa,ca,c=0;
-    
-    sa=sum(x,y,c);
-    ca=carry(x,y,c);
-
-    return sa;
-
-}
-int ADD_CARRY(int x,int y)
-{
-   int sa,ca,c=0;
-    
-    sa=sum(x,y,c);
-    ca=carry(x,y,c);
-
-    return ca;
-   
-
-
-}
-
-
 int main()
 {
-    int a[100],b[100],c=0,n,i,ci[100],carr[100];
+    int a[100],b[100],q,inv[100],bb=1,p=0,c=0,n,i,comp[100];
     cout<<"Enter n:";
     cin>>n;
     cout<<"Enter A: ";
@@ -84,35 +60,26 @@ int main()
     {
         cin>>a[i];
     }
-
-    cout<<"Enter B: ";
+    cout<<"Inverse :";
     for(i=0;i<n;i++)
     {
-        cin>>b[i];
+        p=a[i];
+        inv[i]=NOT(p);
+        cout<<inv[i];
     }
-
-    cout<<"Sum: ";
-    for(i=0;i<n;i++)
-    {
-        int p=a[i];
-        int q=b[i];
-        ci[i]=ADD_SUM(p,q);
-    }
+       
     for(i=n-1;i>=0;i--)
     {
-        cout<<ci[i];
+        q=inv[i];
+        comp[i]=sum(q,bb,c);
+        c=carry(q,bb,c);
+        bb=0;
+        
     }
-    cout<<"\nCarry: ";
+    cout<<"\nComplement :";
     for(i=0;i<n;i++)
     {
-        int p=a[i];
-        int q=b[i];
-        carr[i]=ADD_CARRY(p,q);
+        cout<<comp[i];
     }
-     for(i=n-1;i>=0;i--)
-    {
-        cout<<carr[i];
-    }
-   
-   
+
 }
