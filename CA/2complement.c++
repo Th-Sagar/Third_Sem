@@ -52,7 +52,7 @@ int carry( int x, int y, int z)
 }
 int main()
 {
-    int a[100],b[100],q,inv[100],bb=1,p=0,c=0,n,i,comp[100];
+    int a[100],q,inv[100],bb=1,p=0,c=0,n,i,comp[100];
     cout<<"Enter n:";
     cin>>n;
     cout<<"Enter A: ";
