@@ -24,13 +24,14 @@ int main()
         Xx=Xx+(x[i]*x[i]);
         XY=XY+(x[i]*y[i]);
     }
-    cout<<"\nx: "<<X;
-    cout<<"\nx square: "<<Xx;
-    cout<<"\nx*y:"<<XY;
+    // cout<<"\nx: "<<X;
+    // cout<<"\nx square: "<<Xx;
+    // cout<<"\nx*y:"<<XY;
     b=(n*XY-X*Y)/(n*Xx-X*X);
-    cout<<"\nb: "<<b;
+    // cout<<"\nb: "<<b;
     a=(Y/n)-b*(X/n);
-    cout<<"\nb: "<<a;
+    // cout<<"\na: "<<a;
+    cout<<"\nY="<<a<<"X +"<<b;
 
 
 return 0;

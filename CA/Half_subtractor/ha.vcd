@@ -1,0 +1,58 @@
+$date
+  Thu Sep 22 20:21:50 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 1 ! a $end
+$var reg 1 " b $end
+$var reg 1 # d $end
+$var reg 1 $ borr $end
+$scope module diff_tb $end
+$var reg 1 % a $end
+$var reg 1 & b $end
+$var reg 1 ' d $end
+$var reg 1 ( borr $end
+$upscope $end
+$enddefinitions $end
+#0
+X!
+X"
+X#
+X$
+X%
+X&
+X'
+X(
+#1000000
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+#2000000
+1"
+1#
+1$
+1&
+1'
+1(
+#3000000
+1!
+0"
+0$
+1%
+0&
+0(
+#4000000
+1"
+0#
+1&
+0'
+#5000000

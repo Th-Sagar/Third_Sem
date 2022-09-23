@@ -1,0 +1,7 @@
+v 3
+file . "ha_tb.vhdl" "20220916151254.000" "20220922202107.847":
+  entity diff_tb at 1( 0) + 0 on 17;
+  architecture test of diff_tb at 9( 86) + 0 on 18;
+file . "ha.vhdl" "20220916151208.000" "20220922202101.659":
+  entity di at 1( 0) + 0 on 15;
+  architecture behave of di at 14( 176) + 0 on 16;
