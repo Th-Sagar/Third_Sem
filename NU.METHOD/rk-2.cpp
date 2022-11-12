@@ -26,7 +26,7 @@ int main()
         m2 = f(x + h, y + (m1 * h));
         slope = (m1 + m2) / 2;
         y = (y + (slope * h));
-        cout<<y<<endl;
+        cout << y << endl;
     }
     cout << "The value of y at x= " << xn << " is " << y;
 }

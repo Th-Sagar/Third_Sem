@@ -51,7 +51,7 @@ int carry( int x, int y, int z)
 }
 int main()
 {
-    int a,b,c=0,n,i,q,ra[100],qb,rb[100],ps,qs;
+    int a,b,c=0,n,i,q,ra[100],qb,rb[100],ps,qs,su[100];
    cout<<"enter a"<<endl;
    cin>>a;
    cout<<"Enter b :"<<endl;
@@ -74,25 +74,20 @@ int main()
    	 qb=qb/10;
    	 
    }
-   cout<<"the output";
-   for(i=0;i<n;i++)
+   for (i = 0; i < n; i++)
    {
-   	cout<<ra[i];
+       int ps = ra[i];
+       int qs = rb[i];
+
+       su[i] = sum(ps, qs, c);
+       c = carry(ps, qs, c);
    }
-   cout<<endl;
-     for(i=0;i<n;i++)
+   cout<<"the sum of n bit is :"<<endl;
+   for (i = n - 1; i >= 0; i--)
    {
-   	cout<<rb[i];
+       cout << su[i];
    }
-      for(i=0;i<n;i++)
-   {
-    int ps=ra[i];
-    int qs=rb[i];
-       cout<<"\n a["<<i<<"] and b["<<i<<"]";
-       cout<<sum(ps,qs,c)<<endl;
-       c=carry(ps,qs,c);
-   }
-   
+
 //   cout<<"Enter A:\n";
 //    for(i=0;i<n;i++)
 //    {
