@@ -62,10 +62,8 @@ int main()
         if (x == 2)
         {
             yn = y + z * h;
-            b[i] = yn;
-            y1 = yn;
             cout << x << "\t" << yn << endl;
-            i++;
+            
         }
         else
         {
